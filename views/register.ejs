@@ -1,0 +1,34 @@
+
+<%- include('partials/header_static') %>
+
+    <form class="form-signup" action="/register" method="POST">
+      <img src="images/logo.png" alt="logo" class="logo_SigninAndSignup">
+  <!-- <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+  <h1 class="h3 mb-3">Please Sign Up</h1>
+  <label class="sr-only">Username</label>
+  <input type="text" id="inputUsername" class="form-control" placeholder="Username" name="username" required autofocus>
+  <label class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required>
+  <label class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+  <label class="sr-only">Password</label>
+  <input type="password" id="inputConfirmPassword" class="form-control" placeholder="Confirm Password" name="confirm_password" required>
+  <p class="error_msg"> .<%=error%></p>
+  <button class="btn btn-lg btn_SigninAndSignup btn-block" type="submit">Sign Up</button>
+  <p class="register_or">or</p>
+  <div class="Google_btn_div">
+    <a class="btn btn-block btn-social btn-google register_google_btn" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+              Sign Up with Google
+    </a>
+    <a class="btn btn-block btn-social btn-facebook register_btn" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+              Sign Up with Facebook
+    </a>
+  </div>
+
+
+
+</form>
+
+<%- include('partials/footer_static') %>

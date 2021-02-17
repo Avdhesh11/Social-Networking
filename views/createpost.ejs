@@ -1,0 +1,8 @@
+<%- include('partials/header',{profileImage:profileImage}) %>
+
+<h1 class="heading_createpost">Write Your Post✏</h1>
+<form action="/createpost" method="post" class="createpost">
+  <textarea name="userPost" rows="10" cols="80" class="post_area" placeholder="Your post...."></textarea><br>
+  <button type="submit" name="button"  class="btn btn-lg post_upload_btn">post</button>
+</form>
+<%- include('partials/footer') %>

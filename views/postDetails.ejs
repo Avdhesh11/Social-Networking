@@ -1,0 +1,47 @@
+
+
+<%- include('partials/header',{profileImage:profileImage}); %>
+
+<% postwithDetials.reverse().forEach(function(post){  %>
+  <div class="post_in_mypost">
+      <img src="<%=post.profile_img1%>" alt="user image" class="image_in_post">
+
+      <%user.forEach(function(pp){  %>
+      <%  if(post.username1==pp._id){  %>
+           <a class="username_in_post"><%=pp.username%></a>
+      <%  }  %>
+      <%  })%>
+
+
+    <hr class="postline">
+    <p class="post_in_post"><%=post.post1%></p>
+  </div>
+  <div class="post_for_likes">
+    <h5><u>Likes</u></h5>
+    <% post.like.reverse().forEach(function(user1){  %>
+
+      <%user.forEach(function(pp){  %>
+      <%  if(user1==pp._id){  %>
+           <p><%=pp.username%></p>
+      <%  }  %>
+      <%  })%>
+
+  <%  })%>
+  </div>
+
+  <div class="post_for_comments">
+    <h5><u>Comments</u></h5>
+    <% post.comment.reverse().forEach(function(user1){  %>
+
+      <%user.forEach(function(pp){  %>
+      <%  if(user1.name==pp._id){  %>
+           <p><%=pp.username%>  :  <%=user1.comm%></p>
+      <%  }  %>
+      <%  })%>
+
+    <%  })%>
+  </div>
+<% });  %>
+
+
+<%- include('partials/footer') %>

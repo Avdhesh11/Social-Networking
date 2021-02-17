@@ -1,0 +1,30 @@
+
+<%- include('partials/header_static') %>
+    <form class="form-signin" method="POST" action="/login">
+      <img src="images/logo.png" alt="logo" class="logo_SigninAndSignup">
+  <!-- <img class="mb-4" src="/docs/4.5/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72"> -->
+  <h1 class="h3 mb-3">Please Sign In</h1>
+  <label class="sr-only">Email address</label>
+  <input type="email" id="inputEmail" class="form-control" placeholder="Email address" name="email" required autofocus>
+  <label class="sr-only">Password</label>
+  <input type="password" id="inputPassword" class="form-control" placeholder="Password" name="password" required>
+    <p class="error_msg">.<%=login_error%></p>
+
+  <button class="btn btn-lg btn-block btn_SigninAndSignup" type="submit">Sign In</button>
+  <p class="register_or">or</p>
+  <div class="Google_btn_div">
+    <a class="btn btn-block btn-social btn-google register_btn" href="/auth/google" role="button">
+            <i class="fab fa-google"></i>
+              Sign In with Google
+    </a>
+    <a class="btn btn-block btn-social btn-facebook register_btn" href="/auth/facebook" role="button">
+            <i class="fab fa-facebook"></i>
+              Sign In with Facebook
+    </a>
+  </div>
+
+
+
+</form>
+
+<%- include('partials/footer_static') %>

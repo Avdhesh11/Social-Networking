@@ -1,0 +1,74 @@
+<%- include('partials/header',{profileImage:profileImage}); %>
+<!-- <div class="createpost_btn_outer_area">
+  <a href="/createpost"><button type="button" name="button" class="btn btn-lg createpost_btn">+</button></a>
+</div> -->
+<!-- <a href="/createpost" class="createpost_btn_outer_area">+</a> -->
+<!-- <a href="/createpost"><i class="fa fa-plus-circle fa-3x createpost_btn" aria-hidden="true"></i></a> -->
+
+  <!-- <hr> -->
+   <% userWithPost.reverse().forEach(function(post){  %>
+     <div class="post">
+      <img src="<%=post.profile_img1%>" alt="user image" class="image_in_post">
+      <%user.forEach(function(pp){   %>
+    <%    if(post.username1==pp._id){  %>
+             <a class="username_in_post"><%=pp.username%></a>
+      <%  }  %>
+    <%  });%>
+
+       <hr class="postline">
+       <p class="post_in_post"><%=post.post1%></p>
+       <hr class="line_abv_like">
+       <form action="/main" method="post" class="like_form">
+         <button type="submit" class="Like" value="<%=post._id%>" name="like"><i class="fa fa-thumbs-up" aria-hidden="true"></i></button>
+      </form>
+        <!-- <button class="comment" value="hello" name="hello" onclick="fun2(this)"><i class="fa fa-comment" aria-hidden="true"></i></button><br> -->
+         <table>
+           <tr>
+             <td width=600px>
+               <form action="/main" method="post"class="abc">
+                <input type="text" class="write_comm" name="comment" autocomplete="off" placeholder="Write your comment">
+                 <button type="submit" class="post_comm" name="comm_post" value="<%=post._id%>"><i class="fa fa-paper-plane" aria-hidden="true"></i></button>
+               </form>
+             </td>
+             <td>
+               <form action="/postDetails" method="post" >
+                 <button type="submit" name="post_detail" class="likes_nd_comm" value="<%=post._id%>"><i class="fa fa-ellipsis-v" aria-hidden="true"></i></button>
+               </form>
+
+             </td>
+           </tr>
+         </table>
+    </div>
+  <% });  %>
+
+   <!-- <div class="myblock">
+       <img src="<%=profileImage%>" alt="my image">
+  </div> -->
+
+
+<%- include('partials/footer') %>
+<!-- <script>
+  function fun1(){
+    $('.write_comm').slideUp({
+      duration:0.000001
+    });
+    $('.post_comm').slideUp({
+      duration:0.000001
+    });
+  }
+   //window.onload=fun1;
+   function fun2(event){
+     console.log(this.event);
+     // alert(this.event);
+   }
+
+  $(document).ready(function(){
+  $(".comment").click(function(){
+    // alert("clicked");
+    // console.log("hello");
+    $(".write_comm").slideToggle("slow");
+    $(".post_comm").slideToggle("slow");
+  });
+});
+
+</script> -->

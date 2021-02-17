@@ -1,0 +1,21 @@
+<%- include('partials/header',{profileImage:profileImage}); %>
+<!-- <div class="createpost_btn_outer_area">
+  <a href="/createpost"><button type="button" name="button" class="btn btn-lg createpost_btn">+</button></a>
+</div> -->
+<!-- <a href="/createpost" class="createpost_btn_outer_area">+</a> -->
+<!-- <a href="/createpost"><i class="fa fa-plus-circle fa-3x createpost_btn" aria-hidden="true"></i></a>
+ <hr> -->
+  <% userWithPost.reverse().forEach(function(post){  %>
+    <div class="post_in_mypost">
+        <img src="<%=post.profile_img1%>" alt="user image" class="image_in_post">
+      <%  user.forEach(function(pp){   %>
+            <%  if(post.username1==pp._id){  %>
+                <a class="username_in_post"><%=pp.username%></a>
+            <%  }   %>
+      <%  })   %>
+
+      <hr class="postline">
+      <p class="post_in_post"><%=post.post1%></p>
+    </div>
+  <% });  %>
+<%- include('partials/footer') %>

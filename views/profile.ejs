@@ -1,0 +1,38 @@
+<%- include('partials/header',{profileImage:profileImage}) %>
+
+  <form action="/profile"  method="POST" enctype="multipart/form-data">
+    <h1 class="profile_heading">Update your Profile</h1>
+    <p><input type="file"  accept="image/*" name="image" id="file"  onchange="loadFile(event)" style="display:none;"></p>
+    <div  class="profile_image_select" >
+      <p><label for="file" style="cursor: pointer; color:#eeeeee;"><i class="fa fa-camera" aria-hidden="true"></i>
+      </label></p>
+    </div>
+    <p><img id="output" src="<%=profileImage%>" class="profile_image"/></p>
+
+    <div class="personal_info" >
+      <label>Name:</label>
+      <input class="text-line" type="text" name="name"  placeholder="Your Name..." value="<%- name %>" autocomplete="off"></input><br>
+      <label>Username:</label>
+      <input type="text" class="text-line" name="username"  placeholder="Your Username..." value="<%=username%>" autocomplete="off"><br>
+      <label>Birthday:</label>
+      <input type="date" class="text-line" name="dob" placeholder="Your DOB..." value="<%=dob%>" autocomplete="off"><br>
+      <label>Bio:</label>
+      <textarea name="bio" class="text-line" placeholder="About yourself..."  rows="3" cols="10"><%=bio%></textarea>
+    </div>
+
+      <div class="profile_update_btn1">
+        <button type="submit" class="btn home_button_signin profile_update_btn2" name="button">Update</button>
+      </div>
+  </form>
+
+
+<script>
+var loadFile = function(event) {
+	var image = document.getElementById('output');
+	image.src = URL.createObjectURL(event.target.files[0]);
+};
+</script>
+
+
+
+<%- include('partials/footer') %>
